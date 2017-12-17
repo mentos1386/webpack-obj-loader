@@ -37,7 +37,7 @@ export default function (source: string): void {
     if (await existsFile(mtlPath)) additional += await getMaterial(mtlPath);
 
     this.callback(null, `
-  import { Mesh, Material } from 'webgl-obj-loader';
+  import { Mesh, MaterialLibrary } from 'webgl-obj-loader';
   const source = ${JSON.stringify(source)};
   const mesh = new Mesh(source);
   ${additional}
