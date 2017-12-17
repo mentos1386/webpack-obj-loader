@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const file = name => path.resolve(__dirname, `../test/${name}.obj`);
-const fileContents = name => fs.readFileSync(file(name));
+const fileContents = name => fs.readFileSync(file(name)).toString();
 
 import { Mesh } from 'webgl-obj-loader';
 
@@ -17,8 +17,8 @@ describe('Test loading', () => {
 
     expect(output).toBe(`
   import { Mesh } from 'webgl-obj-loader';
-  const source = \`${fileContents('example')}\`;
-  export default new Mesh(source);`);
+  const source = ${JSON.stringify(fileContents('example'))};
+  const mesh = new Mesh(source);
+  export default mesh;`);
   });
-
 });
