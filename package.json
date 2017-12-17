@@ -1,0 +1,66 @@
+{
+  "name": "webpack-obj-loader",
+  "version": "1.0.0",
+  "description": "A webpack loader for obj files.",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "build": "tsc",
+    "prepublishOnly": "npm run test && npm run lint && npm run build"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/index.d.ts",
+    "lib/index.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mentos1386/webpack-obj-loader.git"
+  },
+  "keywords": [
+    "glsl",
+    "shader",
+    "webgl",
+    "webpack",
+    "loader",
+    "import",
+    "include",
+    "typescript"
+  ],
+  "author": "Tine Jozelj <mentos1386@tjo.space> (https://blog.tjo.space)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mentos1386/ts-shader-loader/issues"
+  },
+  "homepage": "https://github.com/mentos1386/webpack-obj-loader#readme",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/*/*.spec.ts"
+  },
+  "dependencies": {
+    "@types/jest": "^21.1.6",
+    "@types/loader-utils": "^1.1.0",
+    "@types/node": "^8.0.51",
+    "loader-utils": "^1.1.0",
+    "webgl-obj-loader": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "memory-fs": "^0.4.1",
+    "ts-jest": "^21.2.1",
+    "tsc": "^1.20150623.0",
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.3.0",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1"
+  }
+}
