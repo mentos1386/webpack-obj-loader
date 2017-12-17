@@ -16,7 +16,7 @@ describe('Test loading With Material', () => {
     const output = data.modules[0].source;
 
     expect(output.replace(/\s/g, '')).toBe(`
-  import { Mesh, Material } from 'webgl-obj-loader';
+  import { Mesh, MaterialLibrary } from 'webgl-obj-loader';
   const source = ${JSON.stringify(fileContents('example-w-material.obj'))};
   const mesh = new Mesh(source);
   const materialSource = ${JSON.stringify(fileContents('example-w-material.mtl'))};
@@ -35,7 +35,7 @@ describe('Test loading Without Material', () => {
     const output = data.modules[0].source;
 
     expect(output.replace(/\s/g, '')).toBe(`
-  import { Mesh, Material } from 'webgl-obj-loader';
+  import { Mesh, MaterialLibrary } from 'webgl-obj-loader';
   const source = ${JSON.stringify(fileContents('example.obj'))};
   const mesh = new Mesh(source);
   export default mesh;`.replace(/\s/g, ''));
@@ -51,7 +51,7 @@ describe('Test loading Missing Material', () => {
     const output = data.modules[0].source;
 
     expect(output.replace(/\s/g, '')).toBe(`
-  import { Mesh, Material } from 'webgl-obj-loader';
+  import { Mesh, MaterialLibrary } from 'webgl-obj-loader';
   const source = ${JSON.stringify(fileContents('example-m-material.obj'))};
   const mesh = new Mesh(source);
   export default mesh;`.replace(/\s/g, ''));
